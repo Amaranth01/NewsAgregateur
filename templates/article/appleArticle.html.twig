@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% block content %}
+        {% if articles %}
+            <h1>Tous nos articles sur Apple =)</h1>
+            {% for article in articles.articles %}
+                <h1>{{ article.title }}</h1>
+                {{ article.description }}
+                <img src="{{ article.urlToImage }}" alt="">
+            {% endfor %}
+        {% endif %}
+    {% endblock %}
+{% endblock %}

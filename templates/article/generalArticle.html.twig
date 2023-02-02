@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    {% block content %}
+        {% if articles %}
+            <h1>Tous nos articles sur l'actualité =)</h1>
+                {% for article in articles.articles %}
+                    <h2>{{ article.title }}</h2>
+                    {{ article.description }}
+                    <img src="{{ article.urlToImage }}" alt="">
+                {% endfor %}
+        {% endif %}
+    {% endblock %}
+{% endblock %}
